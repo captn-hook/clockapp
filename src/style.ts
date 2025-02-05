@@ -2,15 +2,21 @@ import { CSSObject } from '@emotion/react'
 import '@fontsource/ibm-plex-mono'
 
 export enum AppColor {
+	Green = 'green',
+	BlueGreen = 'bluegreen',
 	White = 'white',
 	Black = 'black',
-	Transparent = 'transparent',
+	Grey = 'grey',
+	Raspberry = 'raspberry',
 }
 
 const colors: AppColors = {
-	white: '#ffffff',
-	black: '#000000',
-	transparent: 'transparent',
+	green: '#78BE43',
+	bluegreen: '#0C8AD633',
+	white: '#FFFFFF',
+	black: '#133C55',
+	grey: '#808080',
+	raspberry: '##D81E5B',
 }
 
 export type AppColors = {
@@ -19,10 +25,10 @@ export type AppColors = {
 
 export const globalStyle: CSSObject = {
 	'html': {
-		backgroundColor: colors.black,
+		backgroundColor: colors.green,
 	},
 	'body': {
-		backgroundColor: colors.black,
+		backgroundColor: colors.green,
 		color: colors.white,
 		fontFamily: `'IBM Plex Mono', monospace`,
 	},
