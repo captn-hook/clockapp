@@ -8,6 +8,7 @@ export enum AppColor {
 	Black = 'black',
 	Grey = 'grey',
 	Raspberry = 'raspberry',
+	Transparent = 'transparent',
 }
 
 const colors: AppColors = {
@@ -16,7 +17,8 @@ const colors: AppColors = {
 	white: '#FFFFFF',
 	black: '#133C55',
 	grey: '#808080',
-	raspberry: '##D81E5B',
+	raspberry: '#D81E5B',
+	transparent: 'transparent',
 }
 
 export type AppColors = {
@@ -24,13 +26,35 @@ export type AppColors = {
 }
 
 export const globalStyle: CSSObject = {
+    '@font-face': [
+        {
+            fontFamily: 'Figtree',
+            src: 'url(/ttf/figtree-latin-200-normal.ttf) format("truetype")',
+            fontWeight: 200,
+            fontStyle: 'normal',
+        },
+        {
+            fontFamily: 'Figtree',
+            src: 'url(/ttf/figtree-latin-600-normal.ttf) format("truetype")',
+            fontWeight: 600,
+            fontStyle: 'normal',
+        },
+        {
+            fontFamily: 'Figtree',
+            src: 'url(/ttf/figtree-latin-700-normal.ttf) format("truetype")',
+            fontWeight: 700,
+            fontStyle: 'normal',
+        },
+    ],
 	'html': {
 		backgroundColor: colors.green,
 	},
 	'body': {
-		backgroundColor: colors.green,
+		backgroundColor: colors.transparent,
 		color: colors.white,
-		fontFamily: `'IBM Plex Mono', monospace`,
+		fontFamily: 'Figtree, sans-serif',
+		fontWeight: 400,
+		overflow: 'hidden',
 	},
 	'#reactroot': {
 		display: 'flex',
@@ -46,9 +70,25 @@ const spacing: SpacingFunc = (...n) => n.map(n => `${n * 8}px`).join(' ')
 export interface AppTheme {
 	colors: AppColors
 	spacing: SpacingFunc
+	fontsizes: {
+		fontsmall: string
+		fontmedium: string
+		fontlarge: string
+		normal: number
+		medium: number
+		bold: number
+	}
 }
 
 export const defaultTheme: AppTheme = {
 	colors,
 	spacing,
+	fontsizes: {
+		fontsmall: '0.8rem',
+		fontmedium: '1rem',
+		fontlarge: '1.2rem',
+		normal: 400,
+		medium: 600,
+		bold: 700,
+	},
 }
