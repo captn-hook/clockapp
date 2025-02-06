@@ -5,6 +5,7 @@ import { Global as EmotionGlobal } from '@emotion/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { appBoot } from './redux/appReducer'
 import AppRoot from './AppRoot'
+import Clocks from './Clocks'
 import { globalStyle } from './style'
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<AppRoot />} />
+					<Route path="/clocks" element={<Clocks />} />
 				</Routes>
 			</BrowserRouter>
 		</ReduxProvider>

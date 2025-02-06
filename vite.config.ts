@@ -17,4 +17,14 @@ export default defineConfig({
 			},
 		})
 	],
+	server: {
+		proxy: { // This stops CORS issues by aliasing the API
+			'/auth': {
+				target: 'https://dummyjson.com/auth',
+				changeOrigin: true,
+				secure: false,
+				rewrite: (path) => path.replace(/^\/auth/, ''),
+			},
+		},
+	},
 })

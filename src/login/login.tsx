@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { defaultTheme } from '../style'
 
 // Username and Password fields, along with a Forgot Password and a Remember Me
-const FieldsStyle = styled.div({
+const FieldsStyle = styled.form({
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',

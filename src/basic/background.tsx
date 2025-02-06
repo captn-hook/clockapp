@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import { defaultTheme } from '../style'
+
+// Background is just 3 spheres, but there is some math for responsive design
 interface BackgroundProps {
     width: number
     height: number
@@ -30,10 +32,8 @@ const Background = ({ width, height }: BackgroundProps) => {
         circleSizes[index] = size * (r || 100)
 
         if (height / width > 1.5) {
-            console.log('thin')
             circleHeights[index] = (parseInt(circleHeights[index].toString()) - (height / width * 3)).toString() + 'vh'
         } else {
-            console.log('regular')
             circleHeights[index] = (parseInt(circleHeights[index].toString())).toString() + 'vh'
         }
     })

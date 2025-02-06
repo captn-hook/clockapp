@@ -9,6 +9,8 @@ export enum AppColor {
 	Grey = 'grey',
 	Raspberry = 'raspberry',
 	Transparent = 'transparent',
+	Blue = 'blue',
+	SoftBlue = 'softblue',
 }
 
 const colors: AppColors = {
@@ -19,6 +21,8 @@ const colors: AppColors = {
 	grey: '#808080',
 	raspberry: '#D81E5B',
 	transparent: 'transparent',
+	blue: '#B9CEDB',
+	softblue: '#869AC0',
 }
 
 export type AppColors = {
@@ -74,6 +78,7 @@ export interface AppTheme {
 		fontsmall: string
 		fontmedium: string
 		fontlarge: string
+		fontxlarge: string
 		normal: number
 		medium: number
 		bold: number
@@ -87,6 +92,7 @@ export const defaultTheme: AppTheme = {
 		fontsmall: '0.8rem',
 		fontmedium: '1rem',
 		fontlarge: '1.2rem',
+		fontxlarge: '1.5rem',
 		normal: 400,
 		medium: 600,
 		bold: 700,

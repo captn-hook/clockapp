@@ -19,6 +19,7 @@ const InputStyle = styled.input({
 	padding: '8px',
 	paddingRight: '40px', // Add padding to the right to make space for the icon
 	boxSizing: 'border-box',
+	autoComplete: 'off',
 })
 
 const ShowPasswordStyle = styled.img({
@@ -26,8 +27,8 @@ const ShowPasswordStyle = styled.img({
 	top: '60%',
 	right: '10px', // Position the icon inside the input on the right
 	transform: 'translateY(-50%)',
-	width: '20px', // Adjust width as needed
-	height: '20px', // Adjust height as needed
+	width: '20px', 
+	height: '20px',
 	cursor: 'pointer',
 })
 
@@ -37,7 +38,16 @@ const ShowPassword = ({ onClick, iconstate }: { onClick: () => void; iconstate: 
 	)
 }
 
-const Input = ({ title, titleSize, width, hidden }: { title: string; titleSize: string; width: number, hidden?: boolean }) => {
+interface InputProps {
+	title: string
+	titleSize: string
+	width: number
+	value: string
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+	hidden?: boolean
+}
+
+const Input = ({ title, titleSize, width, value, onChange, hidden }: InputProps) => {
 
 	const [passwordVisible, setPasswordVisible] = React.useState(false)
 
@@ -49,7 +59,7 @@ const Input = ({ title, titleSize, width, hidden }: { title: string; titleSize: 
 		<div style={{ maxWidth: width, width: '100%', marginTop: '10px' }}>
 			<label style={{ fontSize: titleSize, fontWeight: defaultTheme.fontsizes.medium }}>{title}</label>
 			<InputWrapper>
-				<InputStyle type={hidden ? (passwordVisible ? 'text' : 'password') : 'text'} />
+				<InputStyle type={hidden ? (passwordVisible ? 'text' : 'password') : 'text'} value={value} onChange={onChange} autoComplete="off" />
 				{hidden && <ShowPassword onClick={handleShowPassword} iconstate={passwordVisible} />}
 			</InputWrapper>
 		</div>

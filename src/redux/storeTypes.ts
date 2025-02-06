@@ -2,6 +2,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { rootReducer, store } from './store'
 import { ThunkAction, UnknownAction } from '@reduxjs/toolkit'
 
+
 export type AppState = ReturnType<typeof rootReducer>
 export type AppDispatch = typeof store.dispatch
 
