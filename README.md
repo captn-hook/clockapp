@@ -1,4 +1,11 @@
-<img src="https://static.pndlm.net/pndlm/4row-currentcolor-full.svg" width="360" alt="☵☲ PNDLM" />
+<img src="out.gif" width="1024" alt="☵☲ PNDLM" />
+
+# Feedback
+
+This was a done little quick and dirty, specifically the CSS is not immediately reusable, and the responsive design is not perfect at extreme sizes. Furthermore, the JWT is not stored, but I assumed that was out of scope.
+
+
+As far as feedback, I think that is an excellent test of developer ability. A part that may be missing is the planning / design part, if you wanted to assess that.
 
 # Clock App (2025)
 
